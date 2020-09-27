@@ -2,9 +2,9 @@ name: Rust
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 env:
   CARGO_TERM_COLOR: always
@@ -13,18 +13,18 @@ jobs:
   build:
     strategy:
       matrix:
-        rust: [1.34.2, stable, nightly]
+        rust: [1.46.0, stable, nightly]
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: hecrj/setup-rust-action@v1
-      with:
-        rust-version: ${{ matrix.rust }}
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: sudo apt-get -y install libelf-dev
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      - uses: hecrj/setup-rust-action@v1
+        with:
+          rust-version: ${{ matrix.rust }}
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: sudo apt-get -y install libelf-dev
+      - name: Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: cargo test --verbose
