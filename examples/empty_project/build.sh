@@ -2,9 +2,9 @@
 BPF_PROG_NAME="kern"
 USER_PROG_NAME="user"
 OUT_DIR="ebpf_output"
-LLVM_DIS=llvm-dis-9
+LLVM_DIS=llvm-dis-10
 LLC_OPTIONS="-march=bpf -filetype=obj"
-LLC=llc-9
+LLC=llc-10
 OUT_BC=$OUT_DIR"/"$BPF_PROG_NAME".bc"
 OUT_IR_TEMP=$OUT_DIR"/"$BPF_PROG_NAME"_temp.ll"
 OUT_IR=$OUT_DIR"/"$BPF_PROG_NAME".ll"

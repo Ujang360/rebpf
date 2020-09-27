@@ -1,3 +1,7 @@
 target/
 
 Cargo.lock
+
+# build result: ebpf_output
+ebpf_output/
+!ebpf_output/README.md
